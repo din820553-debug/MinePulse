@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_PATH: /app/data/minepulse.db
+    volumes:
+      - minepulse_data:/app/data
+
+volumes:
+  minepulse_data:
